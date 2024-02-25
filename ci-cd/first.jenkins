@@ -12,7 +12,9 @@ pipeline {
   }
   stages {
     stage("First step") {
-      sh 'hostname'
+      steps {
+        sh 'hostname'
+      }
     }
   }
 }
