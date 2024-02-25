@@ -1,7 +1,7 @@
 FROM maven:3.9.2 AS builder
 WORKDIR /app
 COPY . /app/.
-RUN mvn -f /app/pom.xml clean package -DMaven.test.skip=true
+RUN mvn -f /app/jenkins-testing/pom.xml clean package -DMaven.test.skip=true
 
 FROM amazoncorretto:17.0.9
 WORKDIR /app
