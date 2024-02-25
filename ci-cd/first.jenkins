@@ -21,5 +21,13 @@ pipeline {
         sh 'uptime'
       }
     }
+    stage("Create docker image step") {
+      steps {
+        echo "=========== start building docker image ============"
+        dir ('ci-cd') {
+          sh 'docker build . '
+        }
+      }
+    }
   }
 }
